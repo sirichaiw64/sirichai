@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 require('./route')(app)
 
 app.get('/status', function (req,res){
-    res.send('Hello nodejs server belong to Nattapong')
+    res.send('Hello nodejs server belong to sirichai')
 })
 
 app.get('/hello/:name', function(req,res){
