@@ -5,7 +5,7 @@ module.exports = {
        user: process.env.DB_User || 'root',
        password: process.env.DB_PASS || '',
        options: {
-       dialect: process.env.DIALECT || 'sqlite',
+       dialect: process.env.DIALECT  ||'sqlite',
        storage: './nvwebblog-db.sqlite'
        },
        }

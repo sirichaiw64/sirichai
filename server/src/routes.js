@@ -16,4 +16,6 @@ module.exports = (app) =>{
 
     //show
     app.get('/user/:userId',UserController.show)
+
+
 }

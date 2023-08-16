@@ -1,3 +1,14 @@
+module.exports = (sequelize, DataTypes) => {
+    const User = sequelize.define('User', {
+        email: DataTypes.STRING,
+        password: DataTypes.STRING,
+        name: DataTypes.STRING,
+        lastname: DataTypes.STRING,
+        status: DataTypes.STRING,
+        type: DataTypes.STRING
+    })
+    return User
+}
 const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
@@ -17,7 +28,7 @@ fs.readdirSync(__dirname)
         file !== 'index.js'
     )
     .forEach((file) => {
-        const model = sequelize.import(path.join(__dirname, file))(sequrlize, Sequelize.DataTypes)
+        const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
         db[model.name] = model
     })
 db.sequelize = sequelize
