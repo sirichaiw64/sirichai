@@ -1,21 +1,28 @@
 const UserController = require('./controllers/UserController')
 
-module.exports = (app) =>{
+module.exports = (app) => {
 
-    //get all
-    app.get('/users',UserController.index),
+    // create user
+    app.post('/user',
+        UserController.create
+    )
 
-    //create 
-    app.post('/user', UserController.create),
+    // edit user, suspend, active
+    app.put('/user/:userId', UserController.put
+    )
 
-    //edit
-    app.put('/user/:userId', UserController.put),
+    // delete user
+    app.delete('/user/:userId',
+        UserController.remove
+    )
 
-    //delete
-    app.delete('/user/:userId',UserController.delete)
+    // get user by id
+    app.get('/user/:userId',
+        UserController.show
+    )
 
-    //show
-    app.get('/user/:userId',UserController.show)
-
-
+    // get all user
+    app.get('/users',
+        UserController.index
+    )
 }
