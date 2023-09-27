@@ -12,9 +12,9 @@ Vue.use(Router)
 export default new Router({ 
   routes: [ 
     { 
-      path: '/users', 
-      name: 'users', 
-      component: UserIndex 
+      path: '/user/edit/:userId',
+      name: 'user-edit',
+      component: UserEdit
     }, 
     { 
       path: '/user/create', 
